@@ -137,5 +137,57 @@ public class ShowPrimeFactors {
 	}
 }
 
+/*-------------------------------------------------------------------------------------------------------------
+2’den büyük tüm çift sayılar iki asal sayının toplamı biçiminde yazılabilir (Goldbach teoremi). Klavyeden bir 
+çift sayı alan ve bunu iki asal sayının toplamı biçiminde yazdıran programı yazınız
+ ------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		ShowPrime.run();
+	}
+}
+
+public class ShowPrime {
+
+	public static void run() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Lütfen çift bir sayı giriniz:");
+		int number = Integer.parseInt(kb.nextLine());
+		golbach(number);
+	}
+	
+	public static boolean isPrime(int a) {
+		for(int i = 2; i < a; i++) {
+			if(a % i == 0) {
+				return false;
+			}
+		}
+    	return true;
+	}
+	
+	public static void golbach(int a) 
+	{
+		if(a % 2 == 0 && a > 2) {
+			for(int i = 2; i < a; i++) {
+				if(isPrime(i)) {
+					for(int j = 2; j < a; j++) {
+						if(isPrime(j)) {
+							if((i+j) == a) {
+								System.out.println(i + " + " + j);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+
 
 
