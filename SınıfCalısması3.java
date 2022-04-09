@@ -15,11 +15,11 @@ public class FindNumbers {
 	public static void run() 
 	{
 		java.util.Scanner kb =  new java.util.Scanner(System.in);
-		System.out.printf("Please enter the first number:");
+		System.out.print("Please enter the first number:");
 		int a = Integer.parseInt(kb.nextLine());
-		System.out.printf("Please enter the second number:");
+		System.out.print("Please enter the second number:");
 		int b = Integer.parseInt(kb.nextLine());
-		System.out.printf("Please enter the third number:");
+		System.out.print("Please enter the third number:");
 		int c = Integer.parseInt(kb.nextLine());
 		
 		System.out.printf("min(%d, %d, %d) = %d%n", a, b, c, Math.min(Math.min(a, b), c));
