@@ -122,7 +122,7 @@ public class ShowPrimeFactors {
 				return false;
 			}
 		}
-    return true;
+    	return true;
 	}
 	
 	public static void findPrimeFactors(int a)
