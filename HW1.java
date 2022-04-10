@@ -40,12 +40,14 @@ public class NumberUtil {
 		{
 			System.out.printf("%d = %d", mid, min);
 		}
-		else {
+		else 
+		{
 			System.out.printf("%d < %d", min, mid);
 		}
 		
 		
-		if(mid < max) {
+		if(mid < max) 
+		{
 			System.out.printf(" < %d", mid, max);
 		}
 		else if(mid == max)
@@ -63,7 +65,8 @@ değer 10 olacaktır.
 
 package csd;
 
-class App {	
+class App {
+	
 	public static void main(String [] args)
 	{
 		ShowMid.run();
@@ -87,19 +90,24 @@ public class ShowMid {
 	
 	public static int mid(int a, int b, int c)
 	{
-		if(a <= b && b <= c) {
+		if(a <= b && b <= c) 
+		{
 			return b;
 		}
-		else if(a >= b && a <= c) {
+		else if(a >= b && a <= c) 
+		{
 			return a;
 		}
-		else if(a >= b && b >= c) {
+		else if(a >= b && b >= c) 
+		{
 			return b;
 		}
-		else if(a >= c && a <= b) {
+		else if(a >= c && a <= b) 
+		{
 			return a;
 		}
-		else {
+		else 
+		{
 			return c;
 		}
 	}
@@ -112,6 +120,7 @@ metodu yazınız ve test ediniz. Metot pozitif için 1(bir), negatif için -1(ek
 package csd;
 
 class App {
+	
 	public static void main(String [] args)
 	{		
 		ShowSign.run();
@@ -122,7 +131,6 @@ public class ShowSign {
 	public static void run() 
 	{
 		java.util.Scanner kb = new java.util.Scanner(System.in);
-		
 		System.out.println("Please enter a number:");
 		int a = Integer.parseInt(kb.nextLine());
 		int result = signum(a);	
@@ -131,13 +139,16 @@ public class ShowSign {
 	
 	public static int signum(int a) 
 	{
-		if(a > 0) {
+		if(a > 0) 
+		{
 			return 1;
 		}
-		else if(a == 0) {
+		else if(a == 0) 
+		{
 			return 0;
 		}
-		else {
+		else 
+		{
 			return -1;
 		}
 	}
