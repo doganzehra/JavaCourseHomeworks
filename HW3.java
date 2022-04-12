@@ -138,14 +138,73 @@ public class ShowPrime {
 		return false;
 	}	
 }
+
 /*-----------------------------------------------------------------------------------------------------------------------------------------
-3. Parametresi ile aldığı int türden bir sayının basamaksal kökünü bulan calculateDigitalRoot isimli metodu yazınız ve test 
+  3. Parametresi ile aldığı int türden bir sayının basamaksal kökünü bulan calculateDigitalRoot isimli metodu yazınız ve test 
 ediniz
 Açıklamalar:
-• Bir sayının basamaksal kökü tüm basamaklarının toplanması ile elde edilen sayıdır. Basamakları toplama işlemi,
+Bir sayının basamaksal kökü tüm basamaklarının toplanması ile elde edilen sayıdır. Basamakları toplama işlemi,
 tek basamaklı bir sayı elde edilene kadar sürdürülür:
 36987 -> 3 + 6 + 9 + 8 + 7 = 33
 33 -> 3 + 3 = 6 → basamaksal kök
  ------------------------------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		CalculateUtil.run();
+	}
+}
+
+public class CalculateUtil {
+	
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Lütfen bir sayı girin:");
+		int number = Integer.parseInt(kb.nextLine());
+		System.out.printf("%d sayısının basamaksal kökü:%d", number, calculateDigitalRoot(number));
+		
+	}
+	
+	public static int countDigits(int val)
+	{
+		if (val == 0)
+			return 1;
+		
+		int count = 0;
+		
+		while (val != 0) {
+			++count;
+			val /= 10;					
+		}
+		
+		return count;
+	}
+	
+	public static int digitSum(int number) 
+	{
+		int sum = 0;
+		while(number != 0)
+		{
+			sum += number % 10;
+			number /= 10;
+		}
+		return sum;
+	}
+	
+	public static int calculateDigitalRoot(int number) 
+	{
+		while(countDigits(number) > 1) {
+			number = digitSum(number);
+		}
+		return number;
+
+	}
+}
+
+
+
 
 
