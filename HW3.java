@@ -259,6 +259,61 @@ class NumberUtil {
 	}
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+7. Parametresi ile aldığı int türden bir sayının 10'luk sistemde Harshad sayısı olup olmadığını test eden isDecimalHarshad
+isimli metodu NumberUtil sınıfı içerisinde yazınız ve test ediniz.
+Açıklamalar:
+• Basamaklarının toplamına bölünebilen sayılara Harshad (Niven) sayılar denir.
+• Metot negatif sayılar için false değerine dönecektir.
+
+ ------------------------------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		NumberUtil.run();
+	}
+}
+
+public class NumberUtil {
+
+	public static void run() 
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Lütfen  bir sayı giriniz:");
+		int number = Integer.parseInt(kb.nextLine());
+		System.out.printf("%d sayısı bir harshad sayısıdır:%b", number, isDecimalHarshad(number));
+	}
+	
+
+	public static int digitSum(int number) 
+	{
+		int sum=0;
+		while(number != 0)
+		{
+			sum += number % 10;
+			number /= 10;
+		}
+		return sum;
+	}
+	
+	public static boolean isDecimalHarshad(int number)
+	{
+		if(number < 0) {
+			return false;
+		}else {
+			if(number % digitSum(number) == 0) {
+				return true;
+			}else {
+				return false;
+			}
+		}
+	}
+}
+
+
+
 
 
 
