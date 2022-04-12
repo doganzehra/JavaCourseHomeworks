@@ -22,14 +22,19 @@ public class NumberUtil {
 		System.out.printf("%d sayısının basamak sayısı %d'dir.", number, countDigits(number));
 	}
 	
-	public static int countDigits(int number) 
+	public static int countDigits(int val)
 	{
-		int counter = 1;
-		while(number > 10) {
-			number /= 10;
-			++counter;
+		if (val == 0)
+			return 1;
+		
+		int count = 0;
+		
+		while (val != 0) {
+			++count;
+			val /= 10;					
 		}
-		return counter;
+		
+		return count;
 	}
 }
 
