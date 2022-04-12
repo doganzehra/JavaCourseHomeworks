@@ -204,6 +204,63 @@ public class CalculateUtil {
 	}
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+4. Pozitif bir sayının factorian sayısı olup olmadığını test eden isFactorian isimli metodu yazınız ve test ediniz.
+Açıklamalar:
+• Basamaklarının faktoriyelleri toplamı kendisine eşit olan sayıya factorian denir.
+• Sayma sayılarında (pozitif sayılarda) 4 tane factorian sayı vardır. Bunlardan ilk ikisi şüphesiz 1 ve 2'dir.
+• Diğerlerini de bulan test kodunu yazınız.
+• İpucu: Kalan iki sayı da 100000 değerinden küçüktür
+ ------------------------------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		NumberUtil.run();
+	}
+}
+
+class NumberUtil {
+	
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		for(int i = 1; i < 100000; ++i) {
+			isFactorian(i);
+		}
+	}
+	
+	public static int factorial(int number)
+	{
+		int factorial = 1;
+		for(int i = 2; i <= number; i++) {
+			factorial *= i;
+		}
+		return factorial;
+	}
+	
+	public static int digitFactorialSum(int number) 
+	{
+		int sum = 0;
+		while(number != 0)
+		{
+			sum += factorial(number % 10);
+			number /= 10;
+		}
+		return sum;
+	}
+	
+	public static void isFactorian(int number)
+	{
+		if(digitFactorialSum(number) == number) {
+			System.out.println(number);
+		}
+	}
+}
+
+
+
 
 
 
