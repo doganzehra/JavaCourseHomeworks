@@ -312,6 +312,53 @@ public class NumberUtil {
 	}
 }
 
+/*-----------------------------------------------------------------------------------------------------------------------------------------
+8. Parametresi ile aldığı int türden bir sayının Collatz serisine ilişkin sayılarını ekrana basan printCollatz metodunu 
+yazınız.
+Açıklamalar:
+• Collatz conjecture: n bir pozitif tamsayı olmak üzere her yeni n değeri için aşağıdaki kurallar uygulanacaktır:
+- n, 1 değerine eşit ise işlemler sonlandırılacaktır
+- n çift ise yeni n değeri olarak n / 2, n tek ise yeni n değeri olarak 3 * n + 1 alınacaktır
+ ------------------------------------------------------------------------------------------------------------------------------------------*/
+package csd;
+
+class App {	
+	public static void main(String [] args)
+	{
+		NumberUtil.run();
+	}
+}
+
+class NumberUtil {
+	
+	public static void run()
+	{
+		java.util.Scanner kb = new java.util.Scanner(System.in);
+		System.out.print("Lütfen  bir sayı giriniz:");
+		int number = Integer.parseInt(kb.nextLine());
+		System.out.println(number);
+		printCollatz(number);
+		
+	}
+	
+	public static void printCollatz(int number)
+	{
+		while(number > 0) {
+			if(number == 1) {
+				break;
+			}
+			else if(number % 2 == 0){
+				number /= 2;
+				System.out.print(number + " ");
+			}
+			else {
+				number = 3 * number + 1;
+				System.out.print(number + " ");
+			}
+		}
+	}
+}
+
 
 
 
